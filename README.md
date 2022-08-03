@@ -16,6 +16,7 @@ git submodule update --init --recursive
 - [x] Run the example and try doing that in Python
 - [x] Make the python auditor into a submodule (automate submodule updates)
 - [ ] See if you can generate an html page using a python virtual environment and plotly
+- [ ] See if you can push the updates to a website remotely that has a github pages
 
 ## References:
 - [GitHub submodules](https://github.blog/2016-02-01-working-with-submodules/)
