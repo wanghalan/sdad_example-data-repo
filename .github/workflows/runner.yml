@@ -19,16 +19,13 @@ jobs:
       - name: List files in the repository
         run: |
           ls -la ${{ github.workspace }}      
-      - name: printing directory tree to find auditor
-        run: |
-          tree -d ../../../../
       - name: setup python
         uses: actions/setup-python@v4
         with:
           python-version: 3.10.6 #install the python needed
       - name: execute py script # create a manifest with the current directory as root
         run: |
-          python sdad_data-auditor/audit.py -i .
+          python ${{ github.workspace }}/sdad_data-auditor/audit.py -i .
       - name: Commit files
         run: |
           git config --local user.name "robot"
