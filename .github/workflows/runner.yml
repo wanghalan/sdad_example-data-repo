@@ -13,6 +13,8 @@ jobs:
       - name: Download the latest submodules
         run: |
           git submodule update --init --recursive
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 #       - name: Make a manifest file if it does not exist
 #         run: |
