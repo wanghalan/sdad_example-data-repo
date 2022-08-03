@@ -10,9 +10,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@master
       - run: echo "💡 The ${{ github.repository }} repository have been cloned to the runner."
-      - name: Clone auditor
-        run: |
-          git clone git@github.com:yaoeh/sdad_data-auditor.git
+      - name: Check out auditor repository code
+        uses: actions/checkout@master
+        with:
+          repository: yaoeh/sdad_data-auditor
+          path: sdad_data-auditor/
       - run: echo "🌝 The auditor is now cloned on the runner"        
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
