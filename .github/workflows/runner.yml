@@ -21,7 +21,7 @@ jobs:
           ls -la ${{ github.workspace }}      
       - name: printing directory tree to find auditor
         run: |
-          tree -d /
+          tree -d ../../../../
       - name: setup python
         uses: actions/setup-python@v4
         with:
