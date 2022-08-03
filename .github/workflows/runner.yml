@@ -12,8 +12,7 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository have been cloned to the runner."
       - uses: actions/checkout@master
         with:
-          name: yaoeh/sdad_data-auditor
-          ref: refs/heads/release     
+          name: yaoeh/sdad_data-auditor 
       - run: echo "🌝 The auditor is now cloned on the runner"        
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
