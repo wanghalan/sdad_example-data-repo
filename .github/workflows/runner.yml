@@ -20,7 +20,7 @@ jobs:
           python-version: 3.8 #install the python needed
       - name: execute py script # create a manifest
         run: |
-          python .github/workflows/hello_world.py
+          python .github/workflows/sdad_data-auditor/audit.py -i .
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
@@ -33,6 +33,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true          
+          force: true
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
