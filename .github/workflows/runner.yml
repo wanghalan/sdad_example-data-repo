@@ -10,14 +10,13 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with: 
           repository: yaoeh/sdad_data-auditor
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull & update submodules recursively
         run: |
-          git submodule update --init --recursive
-          git submodule update --recursive --remote      
+          git submodule update --init --recursive   
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: setup python
         uses: actions/setup-python@v4
