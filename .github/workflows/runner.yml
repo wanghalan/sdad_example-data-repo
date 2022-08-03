@@ -19,9 +19,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls -la ${{ github.workspace }}      
-      - name: checking current directory
+      - name: printing directory tree to find auditor
         run: |
-          pwd
+          tree -d .
       - name: setup python
         uses: actions/setup-python@v4
         with:
