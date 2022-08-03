@@ -10,6 +10,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@master
       - run: echo "💡 The ${{ github.repository }} repository have been cloned to the runner."
+      - name: Making a auditor directory
+        run: |
+          mkdir auditor
+          cd auditor
       - name: Check out the auditor      
         uses: actions/checkout@master
         with:
@@ -18,6 +22,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
+          cd .. 
           ls -Rla ${{ github.workspace }}      
       - name: setup python
         uses: actions/setup-python@v4
@@ -25,7 +30,7 @@ jobs:
           python-version: 3.10.6 #install the python needed
       - name: execute py script # create a manifest with the current directory as root
         run: |
-          python audit.py -i ../
+          python auditor/audit.py -i .
       - name: Commit files
         run: |
           git config --local user.name "robot"
