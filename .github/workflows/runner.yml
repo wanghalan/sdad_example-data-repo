@@ -10,6 +10,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Download the latest submodules
+      - run: |
+          git submodule update --init --recursive
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 #       - name: Make a manifest file if it does not exist
 #         run: |
