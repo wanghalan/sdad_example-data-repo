@@ -1,3 +1,0 @@
-[submodule ".github/workflows/sdad_data-auditor"]
-	path = .github/workflows/sdad_data-auditor
-	url = git@github.com:yaoeh/sdad_data-auditor.git
